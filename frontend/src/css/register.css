@@ -1,0 +1,162 @@
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.white-section {
+  flex: 1;
+  background-color: #f9f9f9;
+  color: rgb(0, 0, 0);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* Add this line */
+}
+
+.purple-section {
+  flex: 1;
+  background-color: rgb(159, 78, 210);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.top-bar h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.top-bar p {
+  font-size: 1.5rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.signin-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.signin-buttons button {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: none;
+  color: #333;
+  padding: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.signin-buttons button:hover {
+  background-color: #ddd;
+}
+
+.signin-buttons button svg {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 20px;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  width: 300px; /* Adjust the width as needed */
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.register-form label {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+
+.register-form input {
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.register-form button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 120px;
+  background-color: rgb(74, 122, 218);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  margin-left: 2%;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 75%;
+}
+
+.line {
+  background-color: #dac4fd;
+  height: 2px;
+  flex: 1;
+}
+
+.text {
+  margin: 0 10px;
+  white-space: nowrap;
+}
+
+.button-register-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-register-container button {
+  width: 48%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-container button {
+  width: 48%;
+}

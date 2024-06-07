@@ -1,0 +1,190 @@
+.App {
+  display: flex;
+  height: 100vh;
+  overflow: hidden; /* Ensure no scrollbar appears during sliding */
+}
+
+.white-section {
+  flex: 1;
+  background-color: #f9f9f9;
+  color: rgb(0, 0, 0);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.purple-section {
+  flex: 1;
+  background-color: rgb(31, 91, 204);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.purple-section img {
+  object-fit: cover;
+}
+
+.toggle-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 10; /* Ensure it is above other elements */
+}
+
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.top-bar h1 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.top-bar p {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.signin-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.signin-buttons button {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: none;
+  color: #333;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.signin-buttons button:hover {
+  background-color: #ddd;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-form label {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  font-size: 0.8rem;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.login-form button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 120px;
+  background-color: rgb(74, 122, 218);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-form button:hover {
+  cursor: pointer;
+  background-color: #4a148c;
+}
+
+.login-form button:active {
+  transform: translateY(2px);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.line {
+  background-color: #7c30f7;
+  height: 3px;
+  flex: 1;
+}
+
+.text {
+  margin: 0 10px;
+  white-space: nowrap;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .App {
+    flex-direction: row; /* Ensure sections are side by side */
+    position: relative; /* Position relative for sliding */
+  }
+
+  .purple-section, .white-section {
+    width: 100%;
+    height: 100vh;
+    flex: none; /* Disable flex-grow */
+    position: absolute; /* Position absolute for sliding */
+    transition: transform 0.3s ease-in-out; /* Smooth sliding transition */
+  }
+
+  .purple-section {
+    transform: translateX(0); /* Initial position */
+  }
+
+  .white-section {
+    transform: translateX(100%); /* Initial position off-screen */
+  }
+
+  .App.show-login .purple-section {
+    transform: translateX(-100%); /* Slide out of view */
+  }
+
+  .App.show-login .white-section {
+    transform: translateX(0); /* Slide into view */
+  }
+
+  .toggle-button {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .toggle-button {
+    display: none; /* Hide toggle button on larger screens */
+  }
+}
